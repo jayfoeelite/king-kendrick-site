@@ -1,10 +1,31 @@
-/* Base styles remain the same */
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-/* Header Updates */
+:root {
+    --color-black: #000000;
+    --color-white: #ffffff;
+    --color-gold: #ffd700;
+    --color-gray: #f4f4f4;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: var(--color-black);
+    background-color: var(--color-white);
+}
+
+/* Header */
 .header {
     background-color: var(--color-white);
     padding: 1rem;
+    position: fixed;
     width: 100%;
+    top: 0;
     z-index: 1000;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
@@ -15,24 +36,104 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    padding: 0 1rem;
 }
 
 .logo-container {
-    padding: 0.5rem;
+    flex-shrink: 0;
 }
 
 .logo {
-    max-height: 50px;
+    height: 50px;
     width: auto;
 }
 
-/* Navigation Updates */
+/* Navigation */
 .nav ul {
     display: flex;
     list-style: none;
     gap: 2rem;
 }
 
+.nav a {
+    color: var(--color-black);
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.nav a:hover {
+    color: var(--color-gold);
+}
+
+/* Hero Section */
+.hero {
+    padding-top: 120px;
+    background-color: var(--color-black);
+    color: var(--color-white);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+.hero-content {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 4rem;
+    color: var(--color-gold);
+    margin-bottom: 1rem;
+}
+
+.subtitle {
+    font-size: 1.8rem;
+    color: var(--color-white);
+    margin-bottom: 4rem;
+    opacity: 0.9;
+}
+
+.player-info {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 4rem;
+    max-width: 1000px;
+    margin: 0 auto;
+    background: rgba(255,255,255,0.1);
+    padding: 3rem;
+    border-radius: 12px;
+}
+
+.info-section {
+    text-align: left;
+}
+
+.info-section h2 {
+    color: var(--color-gold);
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+}
+
+.info-section ul {
+    list-style: none;
+}
+
+.info-section li {
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+}
+
+.bullet {
+    color: var(--color-gold);
+    margin-right: 1rem;
+}
+
+/* Mobile Menu Button */
 .menu-toggle {
     display: none;
     flex-direction: column;
@@ -52,7 +153,7 @@
     transition: all 0.3s ease;
 }
 
-/* Mobile Navigation */
+/* Responsive Design */
 @media (max-width: 768px) {
     .header {
         position: relative;
@@ -89,7 +190,25 @@
         font-size: 1.2rem;
     }
 
-    /* Menu Toggle Animation */
+    .hero {
+        padding-top: 2rem;
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .subtitle {
+        font-size: 1.3rem;
+        margin-bottom: 2rem;
+    }
+
+    .player-info {
+        grid-template-columns: 1fr;
+        padding: 1.5rem;
+        gap: 2rem;
+    }
+
     .menu-toggle.active span:first-child {
         transform: rotate(45deg) translate(8px, 6px);
     }
@@ -101,11 +220,4 @@
     .menu-toggle.active span:last-child {
         transform: rotate(-45deg) translate(7px, -5px);
     }
-
-    /* Hero Section Adjustment */
-    .hero {
-        padding-top: 2rem;
-    }
 }
-
-/* Rest of the CSS remains the same */
