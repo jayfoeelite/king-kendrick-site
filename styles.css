@@ -17,12 +17,12 @@ body {
     line-height: 1.6;
     color: var(--color-black);
     background-color: var(--color-white);
-    overflow-x: hidden;
 }
 
-/* Header Styles */
+/* Header */
 .header {
     background-color: var(--color-white);
+    padding: 1rem;
     width: 100%;
     z-index: 1000;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
@@ -34,7 +34,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 1rem;
+    padding: 0 1rem;
 }
 
 .logo-container {
@@ -58,7 +58,6 @@ body {
     text-decoration: none;
     font-weight: bold;
     transition: color 0.3s ease;
-    font-size: 1.1rem;
 }
 
 .nav a:hover {
@@ -82,7 +81,6 @@ body {
     font-size: 4rem;
     color: var(--color-gold);
     margin-bottom: 1rem;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
 }
 
 .subtitle {
@@ -121,7 +119,6 @@ body {
     margin-bottom: 1rem;
     display: flex;
     align-items: center;
-    font-size: 1.1rem;
 }
 
 .bullet {
@@ -133,12 +130,6 @@ body {
 .highlights {
     padding: 6rem 2rem;
     background-color: var(--color-white);
-}
-
-.highlights h2 {
-    text-align: center;
-    font-size: 2.5rem;
-    margin-bottom: 3rem;
 }
 
 .video-grid {
@@ -183,12 +174,6 @@ body {
     background-color: var(--color-gray);
 }
 
-.news h2 {
-    text-align: center;
-    font-size: 2.5rem;
-    margin-bottom: 3rem;
-}
-
 .news-content {
     max-width: 800px;
     margin: 0 auto;
@@ -201,13 +186,11 @@ body {
 .news-content h3 {
     font-size: 2rem;
     margin-bottom: 1.5rem;
-    color: var(--color-black);
 }
 
 .news-content p {
     margin-bottom: 1.5rem;
     line-height: 1.8;
-    font-size: 1.1rem;
 }
 
 .news-links {
@@ -224,7 +207,6 @@ body {
     text-decoration: none;
     border-radius: 6px;
     transition: all 0.3s ease;
-    font-weight: bold;
 }
 
 .read-more:hover, .prospect-link:hover {
@@ -264,11 +246,6 @@ body {
     margin-bottom: 1.5rem;
 }
 
-.agent-info p {
-    margin-bottom: 1rem;
-    font-size: 1.1rem;
-}
-
 .agent-links {
     display: flex;
     gap: 1rem;
@@ -284,12 +261,6 @@ body {
     border-radius: 6px;
     text-decoration: none;
     font-weight: bold;
-    transition: all 0.3s ease;
-}
-
-.contact-button:hover {
-    transform: translateY(-2px);
-    background-color: var(--color-white);
 }
 
 /* Footer */
@@ -311,31 +282,10 @@ body {
     color: var(--color-white);
     text-decoration: none;
     transition: color 0.3s ease;
-    font-size: 1.1rem;
 }
 
 .footer .social-link:hover {
     color: var(--color-gold);
-}
-
-/* Mobile Menu */
-.menu-toggle {
-    display: none;
-    flex-direction: column;
-    gap: 6px;
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 10px;
-    z-index: 1001;
-}
-
-.menu-toggle span {
-    display: block;
-    width: 25px;
-    height: 2px;
-    background-color: var(--color-black);
-    transition: all 0.3s ease;
 }
 
 /* Mobile Styles */
@@ -344,50 +294,9 @@ body {
         position: relative;
     }
 
-    .menu-toggle {
-        display: flex;
-    }
-
-    .nav {
-        position: fixed;
-        top: 0;
-        right: -100%;
-        width: 100%;
-        height: 100vh;
-        background-color: var(--color-white);
-        padding: 80px 2rem 2rem;
-        transition: right 0.3s ease;
-        z-index: 1000;
-    }
-
-    .nav.active {
-        right: 0;
-    }
-
     .nav ul {
         flex-direction: column;
         align-items: center;
-        gap: 2rem;
-    }
-
-    .nav a {
-        font-size: 1.2rem;
-    }
-
-    .menu-toggle.active span:first-child {
-        transform: rotate(45deg) translate(8px, 6px);
-    }
-
-    .menu-toggle.active span:nth-child(2) {
-        opacity: 0;
-    }
-
-    .menu-toggle.active span:last-child {
-        transform: rotate(-45deg) translate(7px, -5px);
-    }
-
-    .hero {
-        padding-top: 2rem;
     }
 
     .hero h1 {
@@ -403,21 +312,8 @@ body {
         padding: 1.5rem;
     }
 
-    section {
-        padding: 3rem 1rem;
-    }
-
     .news-links,
     .agent-links {
         flex-direction: column;
-    }
-
-    .video-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .footer .social-links {
-        flex-direction: column;
-        gap: 1rem;
     }
 }
