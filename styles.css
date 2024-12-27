@@ -1,4 +1,23 @@
-/* Updated header and hero styles */
+:root {
+    --color-black: #000000;
+    --color-white: #ffffff;
+    --color-gold: #ffd700;
+    --color-gray: #f4f4f4;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: var(--color-black);
+    background-color: var(--color-white);
+}
+
 .header {
     background-color: var(--color-white);
     padding: 1rem;
@@ -40,7 +59,6 @@
     color: var(--color-gold);
 }
 
-/* Hero section updates */
 .hero {
     padding: 8rem 2rem 4rem;
     background: var(--color-black);
@@ -49,9 +67,25 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('https://pbs.twimg.com/profile_images/1863806279216459776/TPaTEJN3_400x400.jpg') center/cover;
+    opacity: 0.15;
+    z-index: 1;
 }
 
 .hero-content {
+    position: relative;
+    z-index: 2;
     max-width: 1200px;
     width: 100%;
     text-align: center;
@@ -81,50 +115,162 @@
     padding: 2rem;
 }
 
-.info-section h2 {
+.highlights {
+    padding: 4rem 2rem;
+    background-color: var(--color-white);
+}
+
+.highlights h2,
+.stats h2,
+.schedule h2,
+.news h2 {
+    text-align: center;
+    margin-bottom: 3rem;
+    font-size: 2.5rem;
+}
+
+.video-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* News Section */
+.news {
+    padding: 4rem 2rem;
+    background-color: var(--color-gray);
+}
+
+.news-content {
+    max-width: 800px;
+    margin: 0 auto;
+    background: var(--color-white);
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.news-content h3 {
     color: var(--color-gold);
-    margin-bottom: 1.5rem;
     font-size: 1.8rem;
-}
-
-.info-section ul {
-    list-style: none;
-}
-
-.info-section li {
     margin-bottom: 1rem;
+}
+
+.news-content p {
+    margin-bottom: 1.5rem;
+    line-height: 1.8;
+}
+
+.news-source {
+    font-style: italic;
+    color: #666;
+}
+
+/* Social Media Section */
+.social-media {
+    padding: 4rem 2rem;
+    background-color: var(--color-white);
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.social-link {
     display: flex;
     align-items: center;
-    font-size: 1.1rem;
+    gap: 0.5rem;
+    color: var(--color-black);
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: transform 0.3s ease;
 }
 
-.bullet {
+.social-link:hover {
+    transform: translateY(-2px);
     color: var(--color-gold);
-    margin-right: 1rem;
+}
+
+.social-icon {
+    font-size: 1.5rem;
+}
+
+.instagram-feed {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 0;
+}
+
+/* Contact Section with Agent Info */
+.contact {
+    padding: 4rem 2rem;
+    background-color: var(--color-black);
+    color: var(--color-white);
+}
+
+.contact-info {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.agent-info {
+    margin-top: 2rem;
+    padding: 2rem;
+    background-color: rgba(255,255,255,0.1);
+    border-radius: 8px;
+}
+
+.agent-info h3 {
+    color: var(--color-gold);
+    margin-bottom: 1rem;
+}
+
+.contact-button {
+    display: inline-block;
+    background-color: var(--color-gold);
+    color: var(--color-black);
+    padding: 1rem 2rem;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 1rem;
+    transition: transform 0.3s ease;
+}
+
+.contact-button:hover {
+    transform: translateY(-2px);
+}
+
+.footer {
+    background-color: var(--color-black);
+    color: var(--color-white);
+    text-align: center;
+    padding: 2rem;
 }
 
 @media (max-width: 768px) {
     .hero h1 {
         font-size: 3rem;
-        padding-top: 1rem;
     }
-
+    
     .subtitle {
         font-size: 1.2rem;
-        margin-bottom: 2rem;
     }
-
+    
     .player-info {
         grid-template-columns: 1fr;
         gap: 2rem;
-        padding: 1rem;
     }
-
-    .info-section h2 {
-        font-size: 1.5rem;
-    }
-
-    .info-section li {
-        font-size: 1rem;
+    
+    .social-links {
+        flex-direction: column;
+        align-items: center;
     }
 }
