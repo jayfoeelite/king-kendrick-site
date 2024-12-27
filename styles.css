@@ -1,6 +1,244 @@
-/* Previous styles remain the same */
+/* Base Styles */
+:root {
+    --color-black: #000000;
+    --color-white: #ffffff;
+    --color-gold: #ffd700;
+    --color-gray: #f4f4f4;
+}
 
-/* Contact Section Continued */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: var(--color-black);
+    background-color: var(--color-white);
+    overflow-x: hidden;
+}
+
+/* Header Styles */
+.header {
+    background-color: var(--color-white);
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.header-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+}
+
+.logo-container {
+    flex-shrink: 0;
+}
+
+.logo {
+    height: 50px;
+    width: auto;
+}
+
+/* Navigation */
+.nav ul {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav a {
+    color: var(--color-black);
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+    font-size: 1.1rem;
+}
+
+.nav a:hover {
+    color: var(--color-gold);
+}
+
+/* Hero Section */
+.hero {
+    background-color: var(--color-black);
+    color: var(--color-white);
+    padding: 6rem 2rem 4rem;
+}
+
+.hero-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 4rem;
+    color: var(--color-gold);
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.subtitle {
+    font-size: 1.8rem;
+    color: var(--color-white);
+    margin-bottom: 4rem;
+    opacity: 0.9;
+}
+
+.player-info {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 4rem;
+    max-width: 1000px;
+    margin: 0 auto;
+    background: rgba(255,255,255,0.1);
+    padding: 3rem;
+    border-radius: 12px;
+}
+
+.info-section {
+    text-align: left;
+}
+
+.info-section h2 {
+    color: var(--color-gold);
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+}
+
+.info-section ul {
+    list-style: none;
+}
+
+.info-section li {
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    font-size: 1.1rem;
+}
+
+.bullet {
+    color: var(--color-gold);
+    margin-right: 1rem;
+}
+
+/* Highlights Section */
+.highlights {
+    padding: 6rem 2rem;
+    background-color: var(--color-white);
+}
+
+.highlights h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+}
+
+.video-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.video-container {
+    background-color: var(--color-black);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.video-container:hover {
+    transform: translateY(-5px);
+}
+
+.video-container iframe {
+    width: 100%;
+    aspect-ratio: 16/9;
+    border: none;
+}
+
+.video-info {
+    padding: 1.5rem;
+    color: var(--color-white);
+}
+
+.video-info h3 {
+    color: var(--color-gold);
+    margin-bottom: 0.5rem;
+}
+
+/* News Section */
+.news {
+    padding: 6rem 2rem;
+    background-color: var(--color-gray);
+}
+
+.news h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+}
+
+.news-content {
+    max-width: 800px;
+    margin: 0 auto;
+    background: var(--color-white);
+    padding: 3rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.news-content h3 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    color: var(--color-black);
+}
+
+.news-content p {
+    margin-bottom: 1.5rem;
+    line-height: 1.8;
+    font-size: 1.1rem;
+}
+
+.news-links {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.read-more, .prospect-link {
+    display: inline-block;
+    padding: 1rem 2rem;
+    background-color: var(--color-black);
+    color: var(--color-white);
+    text-decoration: none;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    font-weight: bold;
+}
+
+.read-more:hover, .prospect-link:hover {
+    background-color: var(--color-gold);
+    color: var(--color-black);
+}
+
+/* Contact Section */
+.contact {
+    padding: 6rem 2rem;
+    background-color: var(--color-black);
+    color: var(--color-white);
+}
+
 .contact h2 {
     text-align: center;
     font-size: 2.5rem;
@@ -52,15 +290,6 @@
 .contact-button:hover {
     transform: translateY(-2px);
     background-color: var(--color-white);
-}
-
-.contact-email {
-    margin-top: 3rem;
-}
-
-.contact-email p {
-    margin-bottom: 1.5rem;
-    font-size: 1.1rem;
 }
 
 /* Footer */
@@ -167,13 +396,15 @@
 
     .subtitle {
         font-size: 1.3rem;
-        margin-bottom: 2rem;
     }
 
     .player-info {
         grid-template-columns: 1fr;
         padding: 1.5rem;
-        gap: 2rem;
+    }
+
+    section {
+        padding: 3rem 1rem;
     }
 
     .news-links,
@@ -183,45 +414,6 @@
 
     .video-grid {
         grid-template-columns: 1fr;
-    }
-
-    .news-content,
-    .agent-info {
-        padding: 1.5rem;
-    }
-
-    .read-more,
-    .prospect-link,
-    .contact-button {
-        width: 100%;
-        text-align: center;
-    }
-}
-
-/* Additional Mobile Optimizations */
-@media (max-width: 480px) {
-    .hero h1 {
-        font-size: 2rem;
-    }
-
-    .subtitle {
-        font-size: 1.1rem;
-    }
-
-    .info-section h2 {
-        font-size: 1.5rem;
-    }
-
-    .info-section li {
-        font-size: 1rem;
-    }
-
-    section {
-        padding: 3rem 1rem;
-    }
-
-    .video-info h3 {
-        font-size: 1.1rem;
     }
 
     .footer .social-links {
