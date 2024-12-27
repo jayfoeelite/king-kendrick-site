@@ -2,7 +2,6 @@
     --color-black: #000000;
     --color-white: #ffffff;
     --color-gold: #ffd700;
-    --color-gray: #f4f4f4;
 }
 
 * {
@@ -12,7 +11,7 @@
 }
 
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: Arial, sans-serif;
     line-height: 1.6;
     color: var(--color-black);
     background-color: var(--color-white);
@@ -57,18 +56,17 @@ body {
     color: var(--color-gold);
 }
 
-/* Hero Section */
 .hero {
     padding: 8rem 2rem 4rem;
     text-align: center;
-    background: var(--color-black);
+    background-color: var(--color-black);
     color: var(--color-white);
 }
 
 .hero h1 {
     font-size: 3rem;
-    margin-bottom: 2rem;
     color: var(--color-gold);
+    margin-bottom: 2rem;
 }
 
 .player-info {
@@ -80,10 +78,77 @@ body {
     text-align: left;
 }
 
-/* Stats Section */
+.info-section h2 {
+    color: var(--color-gold);
+    margin-bottom: 1rem;
+}
+
+.info-section ul {
+    list-style: none;
+}
+
+.info-section li {
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+}
+
+.bullet {
+    color: var(--color-gold);
+    margin-right: 0.5rem;
+}
+
+.highlights {
+    padding: 4rem 2rem;
+    background-color: var(--color-white);
+}
+
+.video-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.video-container {
+    background-color: var(--color-black);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.video-container:hover {
+    transform: translateY(-5px);
+}
+
+.video-container iframe {
+    width: 100%;
+    aspect-ratio: 16/9;
+    border: none;
+}
+
+.video-info {
+    padding: 1rem;
+    color: var(--color-white);
+}
+
+.video-info h3 {
+    color: var(--color-gold);
+    margin-bottom: 0.5rem;
+}
+
 .stats {
     padding: 4rem 2rem;
-    background-color: var(--color-gray);
+    background-color: var(--color-black);
+    color: var(--color-white);
+}
+
+.stats h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: var(--color-gold);
 }
 
 .stats-grid {
@@ -95,11 +160,9 @@ body {
 }
 
 .stat-card {
-    background-color: var(--color-black);
+    background-color: rgba(255,255,255,0.1);
     padding: 2rem;
     border-radius: 8px;
-    color: var(--color-white);
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
     transition: transform 0.3s ease;
 }
 
@@ -110,7 +173,6 @@ body {
 .stat-card h3 {
     color: var(--color-gold);
     margin-bottom: 1.5rem;
-    font-size: 1.5rem;
 }
 
 .stat-list {
@@ -130,12 +192,6 @@ body {
     color: var(--color-gold);
 }
 
-.stat-label {
-    font-size: 0.9rem;
-    color: var(--color-white);
-}
-
-/* Schedule Section */
 .schedule {
     padding: 4rem 2rem;
     background-color: var(--color-white);
@@ -159,7 +215,6 @@ body {
     padding: 1rem;
     text-align: center;
     font-weight: bold;
-    text-transform: uppercase;
 }
 
 .game-details {
@@ -174,12 +229,6 @@ body {
     margin-bottom: 1rem;
 }
 
-.upcoming-games {
-    background-color: var(--color-white);
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-}
-
 .game-item {
     display: grid;
     grid-template-columns: auto 1fr auto;
@@ -187,10 +236,6 @@ body {
     align-items: center;
     padding: 1.5rem;
     border-bottom: 1px solid rgba(0,0,0,0.1);
-}
-
-.game-item:last-child {
-    border-bottom: none;
 }
 
 .ticket-button, .ticket-link {
@@ -208,68 +253,49 @@ body {
     transform: translateY(-2px);
 }
 
-/* News Section */
-.news {
+.contact {
     padding: 4rem 2rem;
-    background-color: var(--color-gray);
+    text-align: center;
 }
 
-.news-grid {
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    gap: 2rem;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.news-card {
-    background-color: var(--color-white);
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-}
-
-.news-image img {
-    width: 100%;
-    height: 300px;
-    object-fit: cover;
-}
-
-.news-content {
-    padding: 1.5rem;
-}
-
-.news-tag {
+.contact-button {
     display: inline-block;
     background-color: var(--color-gold);
     color: var(--color-black);
-    padding: 0.25rem 0.75rem;
+    padding: 1rem 2rem;
     border-radius: 4px;
-    font-size: 0.9rem;
+    text-decoration: none;
     font-weight: bold;
+    margin-top: 1rem;
+    transition: transform 0.3s ease;
+}
+
+.contact-button:hover {
+    transform: translateY(-2px);
+}
+
+.footer {
+    background-color: var(--color-black);
+    color: var(--color-white);
+    text-align: center;
+    padding: 2rem;
+}
+
+.social-links {
     margin-bottom: 1rem;
 }
 
-.news-excerpt {
-    margin: 1rem 0;
-    color: #666;
+.social-link {
+    color: var(--color-white);
+    text-decoration: none;
+    margin: 0 1rem;
+    transition: color 0.3s ease;
 }
 
-.news-meta {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    color: #888;
-    font-size: 0.9rem;
+.social-link:hover {
+    color: var(--color-gold);
 }
 
-.news-sidebar {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-}
-
-/* Responsive Design */
 @media (max-width: 768px) {
     .nav ul {
         flex-direction: column;
@@ -281,7 +307,7 @@ body {
         font-size: 2rem;
     }
 
-    .news-grid {
+    .video-grid {
         grid-template-columns: 1fr;
     }
 
